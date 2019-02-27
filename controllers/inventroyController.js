@@ -1,4 +1,5 @@
 Inventory = require('../model/inventroyModel.js');
+var db = require('../database.js');
 
 exports.index = function (req, res) {
     Inventory.get(function (err, results) {
@@ -18,7 +19,7 @@ exports.index = function (req, res) {
 
 exports.join = function(req, res) {
 
-        Inventory.aggregate([{
+        db.collection('inventories').aggregate([{
             $lookup: {
                 form:'contacts',
                 localField: 'customer_id',
@@ -36,4 +37,4 @@ exports.join = function(req, res) {
                 });
             }
         });
-};
+}
