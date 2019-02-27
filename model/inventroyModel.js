@@ -4,9 +4,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var inventorySchema = new Schema({
-    sku: String,
-    description: String,
-    instock: String,
+    sku:String,
+    description:String,
+    instock: Number,
     customer_id: String
 });
 

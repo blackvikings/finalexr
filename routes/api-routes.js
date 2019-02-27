@@ -24,4 +24,7 @@ router.route('/contacts/:contact_id')
 router.route('/inventroies')
     .get(inventroyController.index);
 
+router.route('/join')
+    .get(inventroyController.join);
+
 module.exports = router;
