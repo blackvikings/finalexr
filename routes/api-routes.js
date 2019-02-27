@@ -20,4 +20,7 @@ router.route('/contacts/:contact_id')
     .put(contactController.update)
     .delete(contactController.delete);
 
+router.route('/contacts/inventroies')
+    .get(contactController.inventroy);
+
 module.exports = router;
