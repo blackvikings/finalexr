@@ -9,17 +9,26 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+const url = 'mongodb://localhost/resthub';
+
+var wating = [];
+
 app.use(bodyParser.urlencoded({
     extended: true
  }));
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/resthub');
+mongoose.connect(url, function(err, database){
+    error = err;
+    db = database;
 
-var db = mongoose.connection;
+    wating.forEach(function (callback){
+        callback(err, database);
+    })
+});
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.send('Hello World with Express'));
 

@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
 });
 
 var contactController = require('../controllers/contactController.js');
+var inventroyController = require('../controllers/inventroyController.js');
 
 router.route('/contacts')
     .get(contactController.index)
@@ -20,7 +21,7 @@ router.route('/contacts/:contact_id')
     .put(contactController.update)
     .delete(contactController.delete);
 
-router.route('/contacts/inventroies')
-    .get(contactController.inventroy);
+router.route('/inventroies')
+    .get(inventroyController.index);
 
 module.exports = router;

@@ -1,5 +1,4 @@
 Contact = require('../model/contactModel.js');
-Inventroy = require('../model/inventroyModel.js'); 
 
 exports.index = function (req, res) {
     Contact.get(function (err, contacts) {
@@ -79,18 +78,3 @@ res.json({
         });
     });
 };
-
-exports.inventroy = function (req, res){
-    Inventroy.get(function (err, result){
-        if(err)
-            res.json({
-                status: 'error',
-                message: err
-            });
-            res.json({
-                status:'sucess',
-                message:'There is results',
-                data: result
-            })
-    });
-}
