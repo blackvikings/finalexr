@@ -33,8 +33,7 @@ exports.join = function(req, res) {
                 res.json({
                     status:'success',
                     data: results
-                    
-                })
+                });
             }
         });
 };
