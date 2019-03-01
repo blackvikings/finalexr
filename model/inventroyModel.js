@@ -14,3 +14,7 @@ var Inventory =  mongoose.model('Inventory', inventorySchema );
 module.exports.get = function (callback, limit){
     Inventory.find(callback).limit(limit);
 } 
+
+module.exports.find = function (callback){
+    Inventory.find(callback);
+} 
